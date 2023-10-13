@@ -1,10 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import Header from "./Components/HeaderComp";
-import Footer from "./Components/FooterComp";
-import Menu from "./Components/MenuComp";
-
 const pizzaData = [
   {
     name: "Focaccia",
@@ -49,21 +42,3 @@ const pizzaData = [
     soldOut: false,
   },
 ];
-
-function App() {
-  return (
-    <div className="container">
-      <Header />
-      <Menu pizzaData={pizzaData} />
-      <Footer />
-    </div>
-  );
-}
-
-// React v18
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
