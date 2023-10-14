@@ -17,7 +17,7 @@ function App() {
    * @return {undefined} No return value.
    */
   function handlePrevious() {
-    setStep(step <= 1 ? 1 : step - 1);
+    setStep(step <= 1 ? 1 : (currentStep) => currentStep - 1); // use callback function to update state
   }
 
   /**
@@ -26,12 +26,12 @@ function App() {
    * @return {undefined} No return value.
    */
   function handleNext() {
-    setStep(step >= 3 ? 3 : step + 1);
+    setStep(step >= 3 ? 3 : (currentStep) => currentStep + 1);
   }
 
   return (
     <>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((flag) => !flag)}>
         &times;
       </button>
       {isOpen && (
